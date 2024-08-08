@@ -20,7 +20,7 @@ import jakarta.ws.rs.core.Response;
 import io.quarkus.security.Authenticated;
 
 @Path("/api/v1/auctions")
-@Authenticated
+//@Authenticated
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class AuctionsResource {
@@ -34,7 +34,7 @@ public class AuctionsResource {
     }
 
     @POST
-    @RolesAllowed("admin")
+//    @RolesAllowed("admin")
     @Transactional
     public Response create(CreateAuctionRequest request) {
         Auction auction = auctionRepository.create(request);
